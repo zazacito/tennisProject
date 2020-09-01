@@ -8,7 +8,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-  <title>Créer Un Projet</title>
+  <title>Créer Un Tournoi</title>
 </head>
 <body style="background-color: #251E64!important; color:white">
   <header class="blog-header pt-3">
@@ -29,13 +29,13 @@
         <li class="nav-item">
           <a class="nav-link text-white" href=dashboard_manager.html >Mes Tournois</a>
         </li>
-        <li class="nav-item  ">
-          <a class="nav-link text-white"  href=addTournament.html  > Créer un Tournoi</a>
+        <li class="nav-item active ">
+          <a class="nav-link text-white" href=addTournament.html > Créer un Tournoi</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href=listPlayers.html > Tous les Joueurs </a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item ">
           <a class="nav-link text-white" href=addPlayer.html> Ajouter un Joueur </a>
         </li>
       </ul>
@@ -43,24 +43,35 @@
   </nav>
   <div class="container col-md-5">
     <br>
-    <h1> Ajouter un Joueur </h1>
+    <h1> Créer un Tournoi</h1>
     <br>
     <form>
       <div class="form-group">
-        <label for="nomJoueur">Nom</label>
-        <input type="text" class="form-control" id="nomJoueur" placeholder="Nom du Joueur">
+        <label for="nomTournoi">Nom du Tournoi</label>
+        <input type="text" class="form-control" id="nomTournoi" placeholder="Donnez un nom à votre tournoi">
       </div>
       <div class="form-group">
-        <label for="prenomJoueur">Pénom</label>
-        <input type="text" class="form-control" id="prenomJoueur" placeholder="Pénom du Joueur">
+        <label for="lieuTournoi">Lieu du Tournoi</label>
+        <input type="text" class="form-control" id="lieuTournoi" placeholder="Lieu du Tournoi">
       </div>
       <div class="form-group">
-        <label for="country">Nationalité</label>
-        <input type="text" class="form-control" id="country" placeholder="Nationalité du Joueur">
+        <label for="dateDebut">Date de Début</label>
+        <input type="date" class="form-control" id="dateDebut" placeholder="Date de début du Tournoi">
       </div>
       <div class="form-group">
-        <label for="classement">Classement</label>
-        <input type="number" class="form-control" id="classement" placeholder="Entrez le classement ATP du joueur"></input>
+        <label for="dateFin">Date de Fin</label>
+        <input type="date" class="form-control" id="dateFin" placeholder="Date de fin du Tournoi">
+      </div>
+      <div class="form-group">
+        <label for="nombreJoueurs">Nombre de Joueurs</label>
+        <input type="number" class="form-control" id="nombreJoueurs" placeholder="Entrez le nombre de joueurs"></input>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect2">Sélectionnez Des Collaborateurs</label>
+        <select class="form-control" id="exampleFormControlSelect2">
+            <option>2 Sets Gagnants</option>
+            <option>3 Sets Gagnants</option>
+        </select>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-dark bg-success mb-2">Valider</button>
