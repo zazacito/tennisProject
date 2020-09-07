@@ -53,7 +53,7 @@ create table ARBITRE  (
 CREATE SEQUENCE SEQ_ARBITRE START WITH 1;
 
 CREATE OR REPLACE TRIGGER ARBITRE_ON_INSERT
-   BEFORE INSERT ON ARBITRE 
+   BEFORE INSERT ON ARBITRE
    FOR EACH ROW
 BEGIN
   SELECT SEQ_ARBITRE.NEXTVAL
@@ -79,7 +79,7 @@ create table JOUEUR  (
 CREATE SEQUENCE SEQ_JOUEUR START WITH 1;
 
 CREATE OR REPLACE TRIGGER JOUEUR_ON_INSERT
-   BEFORE INSERT ON JOUEUR 
+   BEFORE INSERT ON JOUEUR
    FOR EACH ROW
 BEGIN
   SELECT SEQ_JOUEUR.NEXTVAL
@@ -104,7 +104,18 @@ create table MATCH  (
    MATOUR               VARCHAR2(30)                    not null,
    constraint PK_MATCH primary key (MAID)
 );
+/*Trigger pour ajouter l'auto-increment sur l'ID*/
+CREATE SEQUENCE SEQ_MATCH START WITH 1;
 
+CREATE OR REPLACE TRIGGER MATCH_ON_INSERT
+   BEFORE INSERT ON MATCH
+   FOR EACH ROW
+BEGIN
+  SELECT SEQ_MATCH.NEXTVAL
+  INTO   :new.maid
+  FROM   dual;
+END;
+/
 /*==============================================================*/
 /* Index : ORGANISE_FK                                          */
 /*==============================================================*/
@@ -138,7 +149,7 @@ create index JOUE_2_FK on MATCH (
 /*==============================================================*/
 create table TOURNOI  (
    TOID                 NUMBER(4)                       not null,
-   USERID                NUMBER(4)                       not null,
+   USERID               NUMBER(4)                       not null,
    TONAME               VARCHAR2(30)                    not null,
    TOPLACE              VARCHAR2(30)                    not null,
    TOSTARTDATE          DATE                            not null,
@@ -153,7 +164,7 @@ create table TOURNOI  (
 CREATE SEQUENCE SEQ_TOURNOI START WITH 1;
 
 CREATE OR REPLACE TRIGGER TOURNOI_ON_INSERT
-   BEFORE INSERT ON TOURNOI 
+   BEFORE INSERT ON TOURNOI
    FOR EACH ROW
 BEGIN
   SELECT SEQ_TOURNOI.NEXTVAL
@@ -182,14 +193,14 @@ create table UTILISATEUR  (
 
 
 /*Trigger pour ajouter l'auto-increment sur l'ID*/
-CREATE SEQUENCE SEQ_TOURNOI START WITH 1;
+CREATE SEQUENCE SEQ_UTILISATEUR START WITH 1;
 
-CREATE OR REPLACE TRIGGER TOURNOI_ON_INSERT
-   BEFORE INSERT ON TOURNOI 
+CREATE OR REPLACE TRIGGER UTILISATEUR_ON_INSERT
+   BEFORE INSERT ON UTILISATEUR
    FOR EACH ROW
 BEGIN
-  SELECT SEQ_TOURNOI.NEXTVAL
-  INTO   :new.toid
+  SELECT SEQ_UTILISATEUR.NEXTVAL
+  INTO   :new.userid
   FROM   dual;
 END;
 /
