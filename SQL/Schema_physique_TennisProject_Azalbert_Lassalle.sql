@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* Nom de SGBD :  ORACLE Version 10gR2                          */
-/* Date de cr�ation :  07/09/2020 11:08:52                      */
+/* Date de creation :  07/09/2020 11:08:52                      */
 /*==============================================================*/
 
 
@@ -49,6 +49,18 @@ create table ARBITRE  (
    ARCUNTRY             VARCHAR2(30)                    not null,
    constraint PK_ARBITRE primary key (ARID)
 );
+/*Trigger pour ajouter l'auto-increment sur l'ID*/
+CREATE SEQUENCE SEQ_ARBITRE START WITH 1;
+
+CREATE OR REPLACE TRIGGER ARBITRE_ON_INSERT
+   BEFORE INSERT ON ARBITRE 
+   FOR EACH ROW
+BEGIN
+  SELECT SEQ_ARBITRE.NEXTVAL
+  INTO   :new.arid
+  FROM   dual;
+END;
+/
 
 /*==============================================================*/
 /* Table : JOUEUR                                               */
@@ -61,6 +73,21 @@ create table JOUEUR  (
    JOCOUNTRY            VARCHAR2(30)                    not null,
    constraint PK_JOUEUR primary key (JOID)
 );
+
+
+/*Trigger pour ajouter l'auto-increment sur l'ID*/
+CREATE SEQUENCE SEQ_JOUEUR START WITH 1;
+
+CREATE OR REPLACE TRIGGER JOUEUR_ON_INSERT
+   BEFORE INSERT ON JOUEUR 
+   FOR EACH ROW
+BEGIN
+  SELECT SEQ_JOUEUR.NEXTVAL
+  INTO   :new.joid
+  FROM   dual;
+END;
+/
+
 
 /*==============================================================*/
 /* Table : MATCH                                                */
@@ -121,6 +148,20 @@ create table TOURNOI  (
    constraint PK_TOURNOI primary key (TOID)
 );
 
+
+/*Trigger pour ajouter l'auto-increment sur l'ID*/
+CREATE SEQUENCE SEQ_TOURNOI START WITH 1;
+
+CREATE OR REPLACE TRIGGER TOURNOI_ON_INSERT
+   BEFORE INSERT ON TOURNOI 
+   FOR EACH ROW
+BEGIN
+  SELECT SEQ_TOURNOI.NEXTVAL
+  INTO   :new.toid
+  FROM   dual;
+END;
+/
+
 /*==============================================================*/
 /* Index : GERE_FK                                              */
 /*==============================================================*/
@@ -138,6 +179,20 @@ create table UTILISATEUR  (
    UMDP                 VARCHAR2(30)                    not null,
    constraint PK_UTILISATEUR primary key (USERID)
 );
+
+
+/*Trigger pour ajouter l'auto-increment sur l'ID*/
+CREATE SEQUENCE SEQ_TOURNOI START WITH 1;
+
+CREATE OR REPLACE TRIGGER TOURNOI_ON_INSERT
+   BEFORE INSERT ON TOURNOI 
+   FOR EACH ROW
+BEGIN
+  SELECT SEQ_TOURNOI.NEXTVAL
+  INTO   :new.toid
+  FROM   dual;
+END;
+/
 
 alter table MATCH
    add constraint FK_MATCH_ARBITRE_ARBITRE foreign key (ARID)
