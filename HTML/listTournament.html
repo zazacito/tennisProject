@@ -8,7 +8,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-  <title>Liste des Joueurs</title>
+  <title>Liste des Tournois</title>
 </head>
 <body style="background-color: #251E64!important; color:white">
     <header class="blog-header pt-3">
@@ -26,13 +26,13 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent" >
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item ">
+        <li class="nav-item active">
           <a class="nav-link text-white"  href=listTournament.html>Mes Tournois</a>
         </li>
         <li class="nav-item  ">
           <a class="nav-link text-white"  href=addTournament.html > Créer un Tournoi</a>
         </li>
-        <li class="nav-item active ">
+        <li class="nav-item ">
           <a class="nav-link text-white" href=listPlayers.html> Tous les Joueurs </a>
         </li>
         <li class="nav-item">
@@ -43,7 +43,7 @@
   </nav>
   <div class="container-fluid">
       <br>
-      <h3 class=ml-3>Tous les Joueurs</h3>
+      <h3 class=ml-3>Tous les Tournois</h3>
       <br>
       <div class="col-md-10">
       <table class="table ml-4 mr-4" style="color:white">
@@ -51,9 +51,11 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Nom</th>
-            <th scope="col">Prénom</th>
-            <th scope="col">Classement</th>
-            <th scope="col">Nationalité</th>
+            <th scope="col">Lieu</th>
+            <th scope="col">Date de Début</th>
+            <th scope="col">Date de Fin</th>
+            <th scope="col">Nombre de Joueurs</th>
+            <th scope="col">Règles</th>
             <th scope="col">Actions</th>
 
           </tr>
@@ -65,8 +67,12 @@
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
+            <td></td>
             <td>
-              <button type="button" class="btn" style="background-color: #633A6B!important; color:white">Modifier</button>
+              <form action="myTournament.html">
+                <button class="btn" type="submit" style="background-color: #633A6B!important; color:white">Voir</button>
+             </form>
             </td>
           </tr>
           <tr>
@@ -75,9 +81,13 @@
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
+            <td></td>
             <td>
-                <button type="button" class="btn" style="background-color: #633A6B!important; color:white">Modifier</button>
-            </td>
+                <form action="myTournament.html">
+                  <button class="btn" type="submit" style="background-color: #633A6B!important; color:white">Voir</button>
+               </form>
+              </td>
           </tr>
         </tbody>
       </table>

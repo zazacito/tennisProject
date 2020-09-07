@@ -8,7 +8,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-  <title>Liste des Joueurs</title>
+  <title>Mon Tournoi</title>
 </head>
 <body style="background-color: #251E64!important; color:white">
     <header class="blog-header pt-3">
@@ -26,13 +26,13 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent" >
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item ">
+        <li class="nav-item active">
           <a class="nav-link text-white"  href=listTournament.html>Mes Tournois</a>
         </li>
         <li class="nav-item  ">
           <a class="nav-link text-white"  href=addTournament.html > Créer un Tournoi</a>
         </li>
-        <li class="nav-item active ">
+        <li class="nav-item ">
           <a class="nav-link text-white" href=listPlayers.html> Tous les Joueurs </a>
         </li>
         <li class="nav-item">
@@ -43,18 +43,24 @@
   </nav>
   <div class="container-fluid">
       <br>
-      <h3 class=ml-3>Tous les Joueurs</h3>
+      <h3 class=ml-3>Nom Du Tournoi</h3>
+      <br>
+      <br>
+      <h4 class=ml-3>Tous les Matchs</h3>
       <br>
       <div class="col-md-10">
       <table class="table ml-4 mr-4" style="color:white">
         <thead class="" style="background-color: #633A6B!important; color:white">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Nom</th>
-            <th scope="col">Prénom</th>
-            <th scope="col">Classement</th>
-            <th scope="col">Nationalité</th>
-            <th scope="col">Actions</th>
+            <th scope="col">Joueur 1</th>
+            <th scope="col">Joueur 2</th>
+            <th scope="col">Tour</th>
+            <th scope="col">Date</th>
+            <th scope="col">Arbitre</th>
+            <th scope="col">Score</th>
+            <th scope="col">Vainqueur</th>
+           
 
           </tr>
         </thead>
@@ -65,9 +71,9 @@
             <td></td>
             <td></td>
             <td></td>
-            <td>
-              <button type="button" class="btn" style="background-color: #633A6B!important; color:white">Modifier</button>
-            </td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
           <tr>
             <th scope="row">2</th>
@@ -75,16 +81,18 @@
             <td></td>
             <td></td>
             <td></td>
-            <td>
-                <button type="button" class="btn" style="background-color: #633A6B!important; color:white">Modifier</button>
-            </td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
         </tbody>
       </table>
     </div>
       <br>
 
-    
+      <form class="ml-5" action="addMatch.html">
+        <button class="btn" type="submit" style="background-color: #633A6B!important; color:white">Ajouter un Match</button>
+     </form>
       <br>
       <br>
       <hr>
