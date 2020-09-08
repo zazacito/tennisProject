@@ -45,3 +45,13 @@ UPDATE (SELECT ARBITRE.ARID,
          AND MATCH.JOU_JOID = JOUEUR.JOID
          AND JOUEUR.JOID = 8)
      SET surname = 'Kévin';
+
+
+
+/* description textuelles des requêtes de suppression */
+
+/*2 requêtes impliquant 1 table*/
+
+/* 2 requêtes impliquant 2 tables*/
+
+ /* 2 requêtes impliquant plus de 2 tables)*/
