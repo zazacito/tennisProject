@@ -51,7 +51,47 @@ UPDATE (SELECT ARBITRE.ARID,
 /* description textuelles des requêtes de suppression */
 
 /*2 requêtes impliquant 1 table*/
+DELETE FROM MATCH
+WHERE MATCH.MADATE < '2022/04/10'
 
+DELETE FROM ARBITRE
+WHERE ARBITRE.ARID = 2
 /* 2 requêtes impliquant 2 tables*/
 
+DELETE (SELECT MATCH.JOU_JOID,
+               MATCH.MAWINNER winner,
+               MATCH.MASCORE score
+          FROM MATCH,
+               JOUEUR
+        WHERE MATCH.JOU_JOID = JOUEUR.JOID
+        AND JOUEUR.JOID = 8);
+
+DELETE (SELECT ARBITRE.ARID,
+               MATCH.ARID
+          FROM MATCH,
+               ARBITRE
+        WHERE MATCH.ARID = ARBITRE.ARID
+        AND ARBITRE.ARID = 2);
+
+
  /* 2 requêtes impliquant plus de 2 tables)*/
+
+
+ /* description textuelles des requêtes de suppression */
+
+/*5 requêtes impliquant 1 table dont 1 avec un group By et une avec un Order By*/
+SELECT ARNAME FROM ARBITRE;
+
+SELECT * FROM JOUEUR
+ORDER by JOCLASS DESC;
+
+SELECT JOCOUNTRY, AVG(JOCLASS)
+FROM JOUEUR
+GROUP BY JOCOUNTRY;
+
+SELECT * FROM MATCH
+WHERE TOID = 1;
+
+SELECT * FROM MATCH
+WHERE TOID = 1
+AND MADATE < '2022/04/10';
