@@ -32,3 +32,16 @@ UPDATE (SELECT ARBITRE.ARID,
    SET surname = 'Kévin';
 
  /* 2 requêtes impliquant plus de 2 tables)*/
+
+ UPDATE (SELECT MATCH.JOU_JOID,
+                JOUEUR.JOID,
+                ARBITRE.ARSURNAME surname,
+                ARBITRE.ARID,
+                MATCH.ARID
+           FROM MATCH,
+                JOUEUR,
+                ARBITRE
+         WHERE MATCH.ARID = ABITRE.ARID
+         AND MATCH.JOU_JOID = JOUEUR.JOID
+         AND JOUEUR.JOID = 8)
+     SET surname = 'Kévin';
