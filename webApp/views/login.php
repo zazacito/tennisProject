@@ -12,7 +12,7 @@
 </head>
 <body class="text-center" cz-shortcut-listen="true" style="background-color: #251E64!important;">
   <div class="container-sm" style="max-width: 350px;">
-    <form class="form-signin">
+    <form class="form-signin" method="POST" action="../phpForms/loginData.php">
       <br>
       <br>
       <h1 class="h3 mb-3 font-weight-normal text-light">Connexion</h1>
@@ -21,13 +21,13 @@
       <br>
 
       <label for="inputEmail" class="sr-only"> Identifiant </label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Identifiant" required="" autofocus="">
+      <input type="number" name="inputEmail" class="form-control" placeholder="Identifiant" required="" autofocus="">
       <br>
       <label for="inputPassword" class="sr-only">Mot de Passe</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Mot de Passe" required="">
+      <input type="password" name="inputPassword" class="form-control" placeholder="Mot de Passe" required="">
       <br>
       <button class="btn btn-lg btn-dark btn-block" type="submit" style="background-color: #633A6B!important;">Se Connecter</button>
-      
+
       <br>
     </form>
   </div>

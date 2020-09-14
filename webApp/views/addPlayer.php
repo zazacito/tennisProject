@@ -27,16 +27,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent" >
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link text-white" href=listTournament.html>Mes Tournois</a>
+          <a class="nav-link text-white" href=listTournament.php>Mes Tournois</a>
         </li>
         <li class="nav-item  ">
-          <a class="nav-link text-white"  href=addTournament.html  > Créer un Tournoi</a>
+          <a class="nav-link text-white"  href=addTournament.php  > Créer un Tournoi</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href=listPlayers.html > Tous les Joueurs </a>
+          <a class="nav-link text-white" href=listPlayers.php > Tous les Joueurs </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link text-white" href=addPlayer.html> Ajouter un Joueur </a>
+          <a class="nav-link text-white" href=addPlayer.php> Ajouter un Joueur </a>
         </li>
       </ul>
     </div>
@@ -45,28 +45,27 @@
     <br>
     <h1> Ajouter un Joueur </h1>
     <br>
-    <form>
+    <form method="POST" action="../phpForms/addDataPlayer.php">
       <div class="form-group">
         <label for="nomJoueur">Nom</label>
-        <input type="text" class="form-control" id="nomJoueur" placeholder="Nom du Joueur">
+        <input type="text" class="form-control" name="nomJoueur" placeholder="Nom du Joueur">
       </div>
       <div class="form-group">
         <label for="prenomJoueur">Pénom</label>
-        <input type="text" class="form-control" id="prenomJoueur" placeholder="Pénom du Joueur">
+        <input type="text" class="form-control" name="prenomJoueur" placeholder="Pénom du Joueur">
       </div>
       <div class="form-group">
         <label for="country">Nationalité</label>
-        <input type="text" class="form-control" id="country" placeholder="Nationalité du Joueur">
+        <input type="text" class="form-control" name="country" placeholder="Nationalité du Joueur">
       </div>
       <div class="form-group">
         <label for="classement">Classement</label>
-        <input type="number" class="form-control" id="classement" placeholder="Entrez le classement ATP du joueur"></input>
+        <input type="number" class="form-control" name="classement" placeholder="Entrez le classement ATP du joueur"></input>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-dark bg-success mb-2">Valider</button>
       </div>
     </form>
-
 
   </div>
 

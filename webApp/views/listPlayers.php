@@ -1,5 +1,6 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -27,16 +28,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent" >
       <ul class="navbar-nav mr-auto">
         <li class="nav-item ">
-          <a class="nav-link text-white"  href=listTournament.html>Mes Tournois</a>
+          <a class="nav-link text-white"  href=listTournament.php>Mes Tournois</a>
         </li>
         <li class="nav-item  ">
-          <a class="nav-link text-white"  href=addTournament.html > Créer un Tournoi</a>
+          <a class="nav-link text-white"  href=addTournament.php > Créer un Tournoi</a>
         </li>
         <li class="nav-item active ">
-          <a class="nav-link text-white" href=listPlayers.html> Tous les Joueurs </a>
+          <a class="nav-link text-white" href=listPlayers.php> Tous les Joueurs </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href=addPlayer.html> Ajouter un Joueur </a>
+          <a class="nav-link text-white" href=addPlayer.php> Ajouter un Joueur </a>
         </li>
       </ul>
     </div>
@@ -55,41 +56,52 @@
             <th scope="col">Classement</th>
             <th scope="col">Nationalité</th>
             <th scope="col">Actions</th>
-
           </tr>
         </thead>
         <tbody>
+          <?php
+
+          require("../phpForms/connectionDataBaseOracle.php");
+          global $dbConn;
+
+
+          $strSQL = "SELECT * FROM JOUEUR";
+
+          $stmt = oci_parse($dbConn,$strSQL);
+
+          $stid = oci_parse($dbConn,$strSQL);
+          if ( ! oci_execute($stid) ){
+            $err = oci_error($stid);
+            trigger_error('Query failed: ' . $err['message'], E_USER_ERROR);
+          };
+
+          while (($row = oci_fetch_array($stid, OCI_BOTH)) != false) {
+             ?>
           <tr>
-            <th scope="row">1</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <th scope="row"><?php echo $row['JOID'] ; ?></th>
+            <td><?php echo $row['JONAME'] ; ?></td>
+            <td><?php echo $row['JOSURNAME'] ; ?></td>
+            <td><?php echo $row['JOCLASS'] ; ?></td>
+            <td><?php echo $row['JOCOUNTRY'] ; ?></td>
             <td>
               <button type="button" class="btn" style="background-color: #633A6B!important; color:white">Modifier</button>
             </td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-                <button type="button" class="btn" style="background-color: #633A6B!important; color:white">Modifier</button>
-            </td>
-          </tr>
+          <?php }
+
+          oci_free_statement($stid);
+          ?>
         </tbody>
       </table>
     </div>
       <br>
 
-    
+
       <br>
       <br>
       <hr>
 
-     
+
     </div>
 
   <!-- Optional JavaScript -->

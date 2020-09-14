@@ -27,16 +27,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent" >
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link text-white" href=listTournament.html>Mes Tournois</a>
+          <a class="nav-link text-white" href=listTournament.php>Mes Tournois</a>
         </li>
         <li class="nav-item active ">
-          <a class="nav-link text-white" href=addTournament.html > Créer un Tournoi</a>
+          <a class="nav-link text-white" href=addTournament.php > Créer un Tournoi</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href=listPlayers.html > Tous les Joueurs </a>
+          <a class="nav-link text-white" href=listPlayers.php > Tous les Joueurs </a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link text-white" href=addPlayer.html> Ajouter un Joueur </a>
+          <a class="nav-link text-white" href=addPlayer.php> Ajouter un Joueur </a>
         </li>
       </ul>
     </div>
@@ -45,35 +45,35 @@
     <br>
     <h1> Créer un Tournoi</h1>
     <br>
-    <form>
+    <form method="POST" action="../phpForms/addDataTournament.php">
       <div class="form-group">
         <label for="nomTournoi">Nom du Tournoi</label>
-        <input type="text" class="form-control" id="nomTournoi" placeholder="Donnez un nom à votre tournoi">
+        <input type="text" class="form-control" name="nomTournoi" placeholder="Donnez un nom à votre tournoi">
       </div>
       <div class="form-group">
         <label for="lieuTournoi">Lieu du Tournoi</label>
-        <input type="text" class="form-control" id="lieuTournoi" placeholder="Lieu du Tournoi">
+        <input type="text" class="form-control" name="lieuTournoi" placeholder="Lieu du Tournoi">
       </div>
       <div class="form-group">
         <label for="dateDebut">Date de Début</label>
-        <input type="date" class="form-control" id="dateDebut" placeholder="Date de début du Tournoi">
+        <input type="date" class="form-control" name="dateDebut" placeholder="Date de début du Tournoi">
       </div>
       <div class="form-group">
         <label for="dateFin">Date de Fin</label>
-        <input type="date" class="form-control" id="dateFin" placeholder="Date de fin du Tournoi">
+        <input type="date" class="form-control" name="dateFin" placeholder="Date de fin du Tournoi">
       </div>
       <div class="form-group">
         <label for="nombreJoueurs">Nombre de Joueurs</label>
-        <input type="number" class="form-control" id="nombreJoueurs" placeholder="Entrez le nombre de joueurs"></input>
+        <input type="number" class="form-control" name="nombreJoueurs" placeholder="Entrez le nombre de joueurs"></input>
       </div>
       <div class="form-group">
         <label for="exampleFormControlSelect2">Règles</label>
-        <select class="form-control" id="exampleFormControlSelect2">
+        <select class="form-control" name="regles">
             <option>2 Sets Gagnants</option>
             <option>3 Sets Gagnants</option>
         </select>
       </div>
-      
+
       <div class="form-group">
         <button type="submit" class="btn btn-dark bg-success mb-2">Valider</button>
       </div>
