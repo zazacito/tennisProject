@@ -41,7 +41,7 @@ UPDATE (SELECT ARBITRE.ARID,
            FROM MATCH,
                 JOUEUR,
                 ARBITRE
-         WHERE MATCH.ARID = ABITRE.ARID
+         WHERE MATCH.ARID = ARBITRE.ARID
          AND MATCH.JOU_JOID = JOUEUR.JOID
          AND JOUEUR.JOID = 8)
      SET surname = 'Kévin';
